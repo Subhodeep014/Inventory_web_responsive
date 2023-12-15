@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDE BAR -->
+        <div class="sidebar active">
+            <ul>
+                <li class="logo">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-rocket-takeoff"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="changeColor(this)">
+                        <span class="icon side-icon active"><i class="bi bi-graph-down"></i></span>
+                        <span class="title side-title active">Dashboard-1</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeColor(this)">
+                        <span class="icon side-icon"><i class="bi bi-person"></i></span>
+                        <span class="title side-title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeColor(this)">
+                        <span class="icon side-icon"><i class="bi bi-question-circle"></i></span>
+                        <span class="title side-title">Helper</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeColor(this)">
+                        <span class="icon side-icon"><i class="bi bi-gear"></i></span>
+                        <span class="title side-title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeColor(this)">
+                        <span class="icon side-icon"><i class="bi bi-info-circle"></i></span>
+                        <span class="title side-title">Support</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeColor(this)">
+                        <span class="icon side-icon"><i class="bi bi-card-list"></i></span>
+                        <span class="title side-title">Document</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeColor(this)">
+                        <span class="icon side-icon"><i class="bi bi-box-arrow-left"></i></span>
+                        <span class="title side-title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main active">
+            <!-- TOP BAR  -->
+            <div class="topbar">
+                <div class="left">
+                    <div class="toggle">
+                        <i class="bi bi-list"></i>
+                    </div>
+                    <div class="search">
+                        <label >
+                            <input type="text" placeholder="Search">
+                            <i class="bi bi-search"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="right">
+                    <a href="#">
+                        <i class="bi bi-bell"></i>
+                        <span class="badgge">4</span>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-chat-left-dots"></i>
+                        <span class="badgge message">3</span>
+                    </a>
+                    <div class="user">
+                        <img src="./profile-pic-max.png" alt="max" srcset="">
+                    </div>
+                </div>
+            </div>
+            <!-- CARD BOX  -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">145</div>
+                        <div class="cardName">Sales</div>                        
+                    </div>
+                    <div class="iconBox">
+                        <i class="bi bi-cart"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">1244</div>
+                        <div class="cardName">Customers</div>                        
+                    </div>
+                    <div class="iconBox">
+                        <i class="bi bi-people"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">$3,264</div>
+                        <div class="cardName">Revenue</div>                        
+                    </div>
+                    <div class="iconBox">
+                        <i class="bi bi-currency-dollar"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">988</div>
+                        <div class="cardName">Products</div>                        
+                    </div>
+                    <div class="iconBox">
+                        <i class="bi bi-cart4"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Graph box -->
+
+            <div class="graphBox">
+                <div class="box">Types of Products Available in Categories<div id="reportsChart"></div></div>
+                <div class="box">Budget Chart<div id="budgetChart" class="echart"></div></div>
+                <div class="box">Low Stock Products<div id="trafficChart" class="echart"></div></div>
+            </div>
+            <div class="details">
+                <!-- Recent Sales -->
+                <div class="recentSales">
+                    <div class="cardHeader">
+                        <h2>Recent Sales</h2>
+                        <a href="#" class="btn">This week</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <td>Product Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Category</td>
+                            <td>Vendor</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kurkure</td>
+                                <td>20</td>
+                                <td>50</td>
+                                <td>Snacks</td>
+                                <td><span class="status">Pepsico</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lays Tomato Tangy</td>
+                                <td>50</td>
+                                <td>150</td>
+                                <td>Snacks</td>
+                                <td><span class="status-pending">Pepsico</span></td>
+                            </tr>
+                            <tr>
+                                <td>Born Vita</td>
+                                <td>180</td>
+                                <td>50</td>
+                                <td>Drinks</td>
+                                <td><span class="status-return">Cadbury</span></td>
+                            </tr>
+                            <tr>
+                                <td>Spinach</td>
+                                <td>20</td>
+                                <td>50</td>
+                                <td>Veggies</td>
+                                <td><span class="status-inprogress">SB Traders</span></td>
+                            </tr>
+                            <tr>
+                                <td>Apple</td>
+                                <td>15</td>
+                                <td>200</td>
+                                <td>Fruits</td>
+                                <td><span class="status-delivered">SB Traders</span></td>
+                            </tr>
+                            <tr>
+                                <td>Orange</td>
+                                <td>25</td>
+                                <td>250</td>
+                                <td>Fruits</td>
+                                <td><span class="status-pending">SB traders</span></td>
+                            </tr>
+                            <tr>
+                                <td>KitKat</td>
+                                <td>25</td>
+                                <td>100</td>
+                                <td>Chocolate</td>
+                                <td><span class="status-pending">Nestle</span></td>
+                            </tr>
+                            <tr>
+                                <td>Fruit Cake</td>
+                                <td>30</td>
+                                <td>90</td>
+                                <td>Cakes</td>
+                                <td><span class="status-inprogress">Britannia</span></td>
+                            </tr>
+                            <tr>
+                                <td>Slice Mango</td>
+                                <td>75</td>
+                                <td>100</td>
+                                <td>Drinks</td>
+                                <td><span class="status-pending">Pepsi</span></td>
+                            </tr>
+                            <tr>
+                                <td>Amul Lassi</td>
+                                <td>15</td>
+                                <td>100</td>
+                                <td>Drinks</td>
+                                <td><span class="status-pending">Amul</span></td>
+                            </tr>
+                            <tr>
+                                <td>kurkure green Chili</td>
+                                <td>30</td>
+                                <td>80</td>
+                                <td>Snacks</td>
+                                <td><span class="status-inprogress">Pepsico</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Top Selling -->
+                <div class="topSelling">
+                    <div class="cardHeader">
+                        <h2>Top Selling</h2>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Product</td>
+                                <td>Price</td>
+                                <td>Sold</td>
+                                <td>Revenue</td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>
+                                <h4>Kitkat<br/><span>Chocolate</span></h4>
+                            </td>
+                            <td>$64</td>
+                            <td>$124</td>
+                            <td>$5,828</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Watermelon<br/><span>Fruits</span></h4>
+                            </td>
+                            <td>$46</td>
+                            <td>$98</td>
+                            <td>$4,828</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>BornVita<br/><span>Drinks</span></h4>
+                            </td>
+                            <td>$41</td>
+                            <td>$50</td>
+                            <td>$1252</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Potato<br/><span>Veggies</span></h4>
+                            </td>
+                            <td>$41</td>
+                            <td>$50</td>
+                            <td>$1252</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Lays Tangy Tomato<br/><span>Snacks</span></h4>
+                            </td>
+                            <td>$41</td>
+                            <td>$50</td>
+                            <td>$1252</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <footer>
+                <div class="footerContent">
+                    <div class="credits">
+                        Designed by 
+                        <a href="#">Subhodeep Basak</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js" integrity="sha512-EmNxF3E6bM0Xg1zvmkeYD3HDBeGxtsG92IxFt1myNZhXdCav9MzvuH/zNMBU1DmIPN6njrhX1VTbqdJxQ2wHDg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js"></script>
+    <script src="./apexCharts.js"></script>
+    <script src="./eCharts.js"></script>
+</body>
+</html>

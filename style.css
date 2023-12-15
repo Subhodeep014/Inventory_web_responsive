@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    scroll-behavior: smooth;
+    --purple:#ce12fd;
+    --white:#ffffff;
+    --grey: #f5f5f5;
+    --darkGrey:#999999;
+    --red : #ff4c28;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    background: url(./city-night.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #dddddd;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+body::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+ /* SIDE BAR */
+.sidebar{
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    background: transparent;
+    border-right: 1px solid rgba(255,255,255, 0.5);
+    backdrop-filter: blur(20px);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.sidebar.active{
+    width: 80px;
+}
+.sidebar ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.sidebar ul li:hover,
+.sidebar ul li.hovered{
+    background: rgba(255, 255, 255, 0.2);
+}
+.sidebar ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+
+}
+.sidebar ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: var(--white);
+}
+.sidebar ul li:hover a, .sidebar ul li.hovered a {
+    color: var(--purple);
+
+}
+.sidebar ul li a .icon{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+.sidebar ul li a .icon i{
+    font-size: 1.5em;
+}
+.sidebar ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.sidebar ul li .logo{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.sidebar ul li a .icon.side-icon.active,
+.sidebar ul li a .title.side-title.active{
+    color: var(--purple);
+} 
+/* MAIN */
+.main{
+    position: absolute;
+    width: calc(100% - 270px);
+    left: 270px;
+    min-height: 100vh;
+    background: transparent;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+.main.active{
+    width: calc(100%-80px);
+    left: 80px;
+}
+
+/* Topbar */
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.topbar .left , 
+.topbar .right{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.toggle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+.toggle i{
+    color: var(--white);
+}
+.search{
+    position: relative;
+    width: 500px;
+    margin: 0 10px;
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 40px;
+    font-size: 18px;
+    outline: none;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    color: var(--white);
+}
+.search label input::placeholder{
+    color: var(--white);
+}
+.search label i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    font-size: 1.2em;
+    color: var(--white);
+}
+.right{
+    position: relative;
+}
+.right a{
+    position: relative;
+    text-decoration: none;
+    color: var(--white);
+}
+.right a i{
+    font-size: 1.8em;
+    margin-right: 30px;
+}
+.right a span{
+    position: absolute;
+    background: var(--purple);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    left: 30%;
+    top: 0;
+    text-align: center;
+    font-weight: 600;
+}
+.right a span.message{
+    background: var(--red);
+}
+.user{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 25px  rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    cursor: pointer;
+}
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* Card Box */
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+.cardBox .card{
+    position: relative;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.cardBox .card .numbers{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--purple);
+}
+.cardBox .card .cardName{
+    color: var(--white);
+    font-size: 1em;
+    margin-top: 5px;
+}
+.cardBox .card .iconBox{
+    font-size: 3.5em;
+    color: var(--purple);
+} 
+.cardBox .card:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBox{
+    color: var(--white);
+
+}
+/* #reportsChart{
+    min-height: 400px;
+} */
+#budgetChart{
+    min-height: 400px;
+}
+#trafficChart{
+    min-height: 400px;
+    
+}
+
+/* charts */
+.graphBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-gap: 10px;
+    min-height: 200px;
+}
+.graphBox .box{
+    position: relative;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.apexcharts-tooltip {
+    /* background: #e574e5; */
+    color: black;
+}
+#trafficChart{
+    /* background-color: greenyellow; */
+}
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap:30px;   
+}
+.details .recentSales{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: transparent;
+    border: 1px solid  rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+}
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2{
+    font-weight: 600;
+    color: var(--purple);
+} 
+.cardHeader .btn{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--purple);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 5px
+}
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.details table thead td{
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--white);
+}
+.details .recentSales table tr{
+    color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.details .recentSales table tr:last-child{
+    border-bottom: none;
+}
+.details .recentSales table tbody tr:hover{
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+.details .recentSales table tr td {
+    padding: 10px;
+}
+.details .recentSales  table tr td:last-child{
+    text-align: end;
+} 
+.details .recentSales table tr td:nth-child(2){
+    text-align: end;
+}
+.details .recentSales table tr td:nth-child(3){
+    text-align: center;
+}
+
+/* top selling */
+
+.topSelling{
+    position: relative;
+    min-height: 500px;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0 ,0, 0, 0.5);
+    border-radius: 20px;
+}
+.topSelling table tr td {
+    padding: 12px;
+    color: var(--white);
+}
+.topSelling table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+    color: var(--white);
+}
+.topSelling table tr td  h4 span{
+    font-size: 14px;
+    color: var(--darkGrey);
+}
+.topSelling table tbody tr:hover{
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+.topSelling table tbody tr h4 span{
+    color: var(--white);
+}
+
+/* footer */
+footer{
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+    display: grid;
+    grid-template-columns: 1fr ;
+    padding: 20px 20px 0 20px;
+}
+.footerContent{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    color: var(--white);
+}
+.footerContent .credits a{
+    text-decoration: none;
+    color: var(--grey);
+}
+@media(max-width:600px){
+    body{
+        background-size: contain;
+        /* background-repeat: no-repeat; */
+    }
+    .topbar{
+        width: 350px;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0px;
+    }
+    .right a span {
+
+    }
+    .sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+    .sidebar.active{
+        width: 0px;
+    }  
+    .main.active{
+        width: 100%;
+        left: 10px !important;
+    }
+    .main{
+        left: 320px;
+    }
+    .toggle{
+        font-size: 2em;
+    }
+    .search{
+        width: 200px;
+    }
+    .search label input {
+        width: 100%;
+        height: 30px;
+    }
+    .right a i {
+        font-size: 1.4em;
+    }
+    .user{
+        width: 30px;
+        height: 30px;
+    }
+    .cardBox{
+        position: relative;
+        width: 95%;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 8px;
+    }
+    .cardBox .card{
+        width: 150px;
+        padding: 5px;
+    }
+    .cardBox .card .numbers{
+        position: relative;
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+    .cardBox .card .cardName{
+        font-size: 0.8em;
+        margin-top: 3px;
+    }
+    .cardBox .card .iconBox{
+        font-size: 2em;
+    } 
+    .right a span {
+        font-size: 0.8em;
+        height: 15px;
+        width: 15px;
+        top: 10%;
+    }
+    .right a i {
+        margin-right: 15px;
+    }
+    .graphBox{
+        position: relative;
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        min-height: 200px;
+    }
+    .graphBox .box{
+        position: relative;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(20px);
+        padding: 10px;
+        width: 88%;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+    }
+
+    /* Recent Sales */
+    .details{
+        position: relative;
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap:30px; 
+        overflow-x: auto; 
+        border: 1px solid #ccc; /* Add a border */
+        padding: 10px; /* Add padding for better aesthetics */
+        max-width: 100%; 
+        border-radius: 15px;
+    }
+    .details .recentSales{
+        border: none;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        padding: 5px;
+        border-radius: 20px;
+    }
+    .cardHeader{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .cardHeader h2{
+        font-size: 20px;
+        font-weight: 600;
+    } 
+    .cardHeader .btn{
+        padding: 5px 5px;
+        border-radius: 5px
+    }
+    .details table{
+        width: 100%;
+        margin-top: 0px;
+    }
+    .details table thead td{
+        font-weight: 600;
+        font-size: 1em;
+        color: var(--white);
+    }
+    /* Top Selling */
+    .topSelling{
+        position: relative;
+        min-height: 500px;
+        padding: 10px;
+        background: transparent;
+        border: none;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(0 ,0, 0, 0.5);
+        border-radius: 20px;
+    }
+    .topSelling table tr td {
+        padding: 12px;
+        color: var(--white);
+    }
+    .topSelling table tr td h4{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.2em;
+        color: var(--white);
+    }
+    .topSelling table tr td  h4 span{
+        font-size: 14px;
+        color: var(--darkGrey);
+    }
+    
+}
+
+
+
+
+
+
+
+
