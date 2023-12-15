@@ -14,13 +14,27 @@
 }
 body{
     font-family: 'Poppins', sans-serif;
-    background: #ffffff;
-    background: url(./city-night.jpg);
+/*     background: #ffffff; */
+/*     background: url(./city-night.jpg); */
+    background: linear-gradient(135deg, #8929ad, #436aac, #43b7b8);
+    background-size: 600% 600%;
+    animation: gradientAnimation 20s infinite;
     background-size: cover;
     background-position: center;
     color: #dddddd;
     min-height: 100vh;
     overflow-x: hidden;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
 body::before{
     position: absolute;
