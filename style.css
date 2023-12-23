@@ -133,7 +133,7 @@ body{
     /* transition: 0.5s; */
     overflow: hidden;
     min-width: 300px;
-    width: 411px;
+    width: 390px;
     border-radius: 10px;
     z-index: -1;
 }
@@ -145,7 +145,7 @@ body{
     backdrop-filter: blur(20px);
     /* transition: 0.5s; */
     overflow: hidden;
-    width: 410px;
+    width: 390px;
     min-width: 300px;
     border-radius: 10px;
     z-index: -1;
