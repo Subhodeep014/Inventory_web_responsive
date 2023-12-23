@@ -49,6 +49,8 @@ body{
     top: 60px;
     left: 0;
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 100px;
 }
 .sidebar ul li{
     position: relative;
@@ -109,6 +111,8 @@ body{
 } 
 /* MAIN */
 .main{
+    top: 0px;
+    z-index: -1;
     position: absolute;
     width: calc(100% - 270px);
     left: 270px;
@@ -122,46 +126,46 @@ body{
     left: 80px;
 }
 .inventory-data{
+    margin-top: 100px;
     background: transparent;
     border: 1px solid rgba(255,255,255, 0.5);
     backdrop-filter: blur(20px);
     /* transition: 0.5s; */
     overflow: hidden;
-    min-width: 350px;
-    width: 500px;
+    min-width: 300px;
+    width: 411px;
     border-radius: 10px;
     z-index: -1;
 }
 .sales-data{
+    align-items: center;
     margin-top: 20px;
     background: transparent;
     border: 1px solid rgba(255,255,255, 0.5);
     backdrop-filter: blur(20px);
     /* transition: 0.5s; */
     overflow: hidden;
-    width: 500px;
-    min-width: 350px;
+    width: 410px;
+    min-width: 300px;
     border-radius: 10px;
+    z-index: -1;
 }
 .addData{
-    /* height: 100vh; */
-    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    height: 100vh; 
+    width: 100%;
     display: none;
     position: absolute;
-    margin-top: 480px;
-    /* top: 0%; */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    /* padding-top: 20px; */
 }
 h2 {
+    font-size: 30px;
     margin-bottom: 10px;
     text-align: center;
   }
 
   form {
-    width: 100%;
+    width: 70%;
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -193,11 +197,6 @@ h2 {
     background-color: #45a049;
   }
 
-  @media only screen and (max-width: 600px) {
-    form {
-      max-width: 100%;
-    }
-  }
 
 /* Topbar */
 .topbar{
@@ -216,7 +215,7 @@ h2 {
 }
 .toggle{
     top: 20px;
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 60px;
     /* display: flex;
@@ -225,7 +224,7 @@ h2 {
     align-items: center;
     font-size: 5px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 10;
 }
 .toggle i{
     color: var(--white);
@@ -546,6 +545,12 @@ footer{
     }
     .right a span {
 
+    }
+    .inventory-data{
+        width: 411px;
+    }
+    .sales-data{
+        width: 411px;
     }
     .sidebar{
         position: fixed;
