@@ -11,6 +11,7 @@
 <body>
     <div class="container">
         <!-- SIDE BAR -->
+
         <div class="sidebar active">
             <ul>
                 <li class="logo">
@@ -19,10 +20,20 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
+                <!-- <li class="logo">
+                    <a href="#">
+                        <span class="icon">
+                            <div class="toggle">
+                                <i class="bi bi-list"></i>
+                            </div>
+                        </span>
+                        <span class="title">Toggle</span>
+                    </a>
+                </li> -->
 
                 <li>
-                    <a href="#" onclick="changeColor(this)">
-                        <span class="icon side-icon active"><i class="bi bi-graph-down"></i></span>
+                    <a href="#" onclick="changeColor(this,'dashboard')">
+                        <span class="icon side-icon active"><i class="bi bi-graph-down" ></i></span>
                         <span class="title side-title active">Dashboard-1</span>
 
                     </a>
@@ -34,8 +45,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" onclick="changeColor(this)">
-                        <span class="icon side-icon"><i class="bi bi-question-circle"></i></span>
+                    <a href="#" onclick="changeColor(this,'inputData')">
+                        <span class="icon side-icon"><i class="bi bi-database-add"></i></i></span>
                         <span class="title side-title">Helper</span>
                     </a>
                 </li>
@@ -65,19 +76,23 @@
                 </li>
             </ul>
         </div>
+
         <div class="main active">
             <!-- TOP BAR  -->
             <div class="topbar">
                 <div class="left">
-                    <div class="toggle">
+                    <!-- <div class="toggle">
                         <i class="bi bi-list"></i>
+                    </div> -->
+                    <div class="toggle">
+                        <i class="bi bi-list"><-Sidebar Toggle</i>
                     </div>
-                    <div class="search">
+                    <!-- <div class="search">
                         <label >
                             <input type="text" placeholder="Search">
                             <i class="bi bi-search"></i>
                         </label>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="right">
                     <a href="#">
@@ -295,14 +310,61 @@
                     </table>
                 </div>
             </div>
-            <footer>
-                <div class="footerContent">
-                    <div class="credits">
-                        Designed by 
-                        <a href="#">Subhodeep Basak</a>
-                    </div>
-                </div>
-            </footer>
+        </div>
+        <div class="addData">
+            <div class="inventory-data">
+                <h2>Add Data in Inventory</h2>
+                <form>
+                  <label for="productName">Product Name:</label>
+                  <input type="text" id="productName" name="productName" required>
+              
+                  <label for="price">Price:</label>
+                  <input type="number" id="price" name="price" required>
+              
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+              
+                  <label for="category">Category:</label>
+                  <select id="category" name="category">
+                    <option value="veggies">Veggies</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="drinks">Drinks</option>
+                    <option value="snack">Snack</option>
+                    <option value="chocolates">Chocolates</option>
+                    <option value="cakes">Cakes</option>
+                  </select>
+              
+                  <label for="vendor">Vendor:</label>
+                  <input type="text" id="vendor" name="vendor" required>
+              
+                  <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="sales-data">
+                <h2>Add Sales Data</h2>
+                <form>
+                  <label for="customerId">Customer ID:</label>
+                  <input type="text" id="customerId" name="customerId" required>
+              
+                  <label for="customerName">Customer Name:</label>
+                  <input type="text" id="customerName" name="customerName" required>
+              
+                  <label for="categoryProduct">Category Product:</label>
+                  <select id="categoryProduct" name="categoryProduct">
+                    <option value="veggies">Veggies</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="drinks">Drinks</option>
+                    <option value="snack">Snack</option>
+                    <option value="chocolates">Chocolates</option>
+                    <option value="cakes">Cakes</option>
+                  </select>
+              
+                  <label for="quantitySold">Quantity Sold:</label>
+                  <input type="number" id="quantitySold" name="quantitySold" required>
+              
+                  <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
