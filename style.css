@@ -126,37 +126,27 @@ body{
     left: 80px;
 }
 .inventory-data{
-    margin-top: 100px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255, 0.5);
-    backdrop-filter: blur(20px);
-    /* transition: 0.5s; */
-    overflow: hidden;
-    min-width: 300px;
-    width: 390px;
-    border-radius: 10px;
-    z-index: -1;
-}
-.sales-data{
-    align-items: center;
     margin-top: 20px;
     background: transparent;
     border: 1px solid rgba(255,255,255, 0.5);
     backdrop-filter: blur(20px);
     /* transition: 0.5s; */
     overflow: hidden;
-    width: 390px;
     min-width: 300px;
+    width: 400px;
     border-radius: 10px;
     z-index: -1;
 }
 .addData{
-    margin: 0 auto;
-    text-align: center;
-    height: 100vh; 
-    width: 100%;
-    display: none;
-    position: absolute;
+    margin-top: 50px;
+    display: none; /* Initially hide the container */
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 4; /* Ensure it's above other content */
+    max-height: 90%; /* Limit maximum height to 90% of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 h2 {
     font-size: 30px;
@@ -165,8 +155,8 @@ h2 {
   }
 
   form {
-    width: 70%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -404,18 +394,16 @@ h2 {
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
     grid-gap:30px;   
 }
 .details .recentSales{
     position: relative;
-    display: grid;
-    min-height: 500px;
-    background: transparent;
-    border: 1px solid  rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     padding: 20px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0 ,0, 0, 0.5);
     border-radius: 20px;
 }
 .cardHeader{
@@ -449,6 +437,10 @@ h2 {
     color: var(--white);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+.details .topSelling table tr{
+    color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
 .details .recentSales table tr:last-child{
     border-bottom: none;
 }
@@ -457,7 +449,7 @@ h2 {
     color: var(--white);
 }
 .details .recentSales table tr td {
-    padding: 10px;
+    padding: 15px;
 }
 .details .recentSales  table tr td:last-child{
     text-align: end;
@@ -708,3 +700,11 @@ footer{
     }
     
 }
+
+
+
+
+
+
+
+
