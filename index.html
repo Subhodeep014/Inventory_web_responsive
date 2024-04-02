@@ -163,91 +163,52 @@
                         <h2>Recent Sales</h2>
                         <a href="#" class="btn">This week</a>
                     </div>
-                    <table>
+                    <table id="salesTable">
                         <thead>
-                            <td>Product Name</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <td>Category</td>
-                            <td>Vendor</td>
+                            <tr>
+                                <th>Customer Id</th>
+                                <th>Customer Name</th>
+                                <th>Category Product</th>
+                                <th>Quanity</th>
+                            </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="salesTableBody">
+                                <!-- Sales data will be inserted here dynamically -->
                             <tr>
-                                <td>Kurkure</td>
+                                <td>12565</td>
+                                <td>John Doe</td>
+                                <td>veggies</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>987512</td>
+                                <td>Swathi</td>
+                                <td>cakes</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>524654</td>
+                                <td>Christiana</td>
+                                <td>drinks</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>987461</td>
+                                <td>Lenard</td>
+                                <td>snack</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>12454</td>
+                                <td>No Name</td>
+                                <td>veggies</td>
+                                <td>4500</td>
+                            </tr>
+                            <tr>
+                                <td>146464</td>
+                                <td>Subhodeep</td>
+                                <td>veggies</td>
                                 <td>20</td>
-                                <td>50</td>
-                                <td>Snacks</td>
-                                <td><span class="status">Pepsico</span></td>
-                            </tr>
-                            <tr>
-                                <td>Lays Tomato Tangy</td>
-                                <td>50</td>
-                                <td>150</td>
-                                <td>Snacks</td>
-                                <td><span class="status-pending">Pepsico</span></td>
-                            </tr>
-                            <tr>
-                                <td>Born Vita</td>
-                                <td>180</td>
-                                <td>50</td>
-                                <td>Drinks</td>
-                                <td><span class="status-return">Cadbury</span></td>
-                            </tr>
-                            <tr>
-                                <td>Spinach</td>
-                                <td>20</td>
-                                <td>50</td>
-                                <td>Veggies</td>
-                                <td><span class="status-inprogress">SB Traders</span></td>
-                            </tr>
-                            <tr>
-                                <td>Apple</td>
-                                <td>15</td>
-                                <td>200</td>
-                                <td>Fruits</td>
-                                <td><span class="status-delivered">SB Traders</span></td>
-                            </tr>
-                            <tr>
-                                <td>Orange</td>
-                                <td>25</td>
-                                <td>250</td>
-                                <td>Fruits</td>
-                                <td><span class="status-pending">SB traders</span></td>
-                            </tr>
-                            <tr>
-                                <td>KitKat</td>
-                                <td>25</td>
-                                <td>100</td>
-                                <td>Chocolate</td>
-                                <td><span class="status-pending">Nestle</span></td>
-                            </tr>
-                            <tr>
-                                <td>Fruit Cake</td>
-                                <td>30</td>
-                                <td>90</td>
-                                <td>Cakes</td>
-                                <td><span class="status-inprogress">Britannia</span></td>
-                            </tr>
-                            <tr>
-                                <td>Slice Mango</td>
-                                <td>75</td>
-                                <td>100</td>
-                                <td>Drinks</td>
-                                <td><span class="status-pending">Pepsi</span></td>
-                            </tr>
-                            <tr>
-                                <td>Amul Lassi</td>
-                                <td>15</td>
-                                <td>100</td>
-                                <td>Drinks</td>
-                                <td><span class="status-pending">Amul</span></td>
-                            </tr>
-                            <tr>
-                                <td>kurkure green Chili</td>
-                                <td>30</td>
-                                <td>80</td>
-                                <td>Snacks</td>
-                                <td><span class="status-inprogress">Pepsico</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -266,46 +227,48 @@
                                 <td>Revenue</td>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>
-                                <h4>Kitkat<br/><span>Chocolate</span></h4>
-                            </td>
-                            <td>$64</td>
-                            <td>$124</td>
-                            <td>$5,828</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Watermelon<br/><span>Fruits</span></h4>
-                            </td>
-                            <td>$46</td>
-                            <td>$98</td>
-                            <td>$4,828</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>BornVita<br/><span>Drinks</span></h4>
-                            </td>
-                            <td>$41</td>
-                            <td>$50</td>
-                            <td>$1252</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Potato<br/><span>Veggies</span></h4>
-                            </td>
-                            <td>$41</td>
-                            <td>$50</td>
-                            <td>$1252</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Lays Tangy Tomato<br/><span>Snacks</span></h4>
-                            </td>
-                            <td>$41</td>
-                            <td>$50</td>
-                            <td>$1252</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Kitkat<br><span>Chocolate</span></h4>
+                                </td>
+                                <td>$64</td>
+                                <td>$124</td>
+                                <td>$5,828</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Watermelon<br><span>Fruits</span></h4>
+                                </td>
+                                <td>$46</td>
+                                <td>$98</td>
+                                <td>$4,828</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>BornVita<br><span>Drinks</span></h4>
+                                </td>
+                                <td>$41</td>
+                                <td>$50</td>
+                                <td>$1252</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Potato<br><span>Veggies</span></h4>
+                                </td>
+                                <td>$41</td>
+                                <td>$50</td>
+                                <td>$1252</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Lays Tangy Tomato<br><span>Snacks</span></h4>
+                                </td>
+                                <td>$41</td>
+                                <td>$50</td>
+                                <td>$1252</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
