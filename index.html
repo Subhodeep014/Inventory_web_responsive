@@ -47,7 +47,7 @@
                 <li>
                     <a href="#" onclick="changeColor(this,'inputData')">
                         <span class="icon side-icon"><i class="bi bi-database-add"></i></i></span>
-                        <span class="title side-title">Add Data</span>
+                        <span class="title side-title">Database</span>
                     </a>
                 </li>
                 <li>
@@ -173,102 +173,35 @@
                             </tr>
                         </thead>
                         <tbody id="salesTableBody">
-                                <!-- Sales data will be inserted here dynamically -->
-                            <tr>
-                                <td>12565</td>
-                                <td>John Doe</td>
-                                <td>veggies</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>987512</td>
-                                <td>Swathi</td>
-                                <td>cakes</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <td>524654</td>
-                                <td>Christiana</td>
-                                <td>drinks</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>987461</td>
-                                <td>Lenard</td>
-                                <td>snack</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>12454</td>
-                                <td>No Name</td>
-                                <td>veggies</td>
-                                <td>4500</td>
-                            </tr>
-                            <tr>
-                                <td>146464</td>
-                                <td>Subhodeep</td>
-                                <td>veggies</td>
-                                <td>20</td>
-                            </tr>
+                            <!-- Sales data will be inserted here dynamically -->
                         </tbody>
                     </table>
                 </div>
                 <!-- Top Selling -->
                 <div class="topSelling">
                     <div class="cardHeader">
-                        <h2>Top Selling</h2>
+                        <h2>Inventory Data</h2>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <td>Product</td>
+                                <td>Product Name</td>
                                 <td>Price</td>
-                                <td>Sold</td>
-                                <td>Revenue</td>
+                                <td>Quantity</td>
+                                <td>Vendor</td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="inventoryData">
                             <tr>
                                 <td>
-                                    <h4>Kitkat<br><span>Chocolate</span></h4>
+                                    <h4>Kitkat<br/><span>Chocolate</span></h4>
                                 </td>
                                 <td>$64</td>
-                                <td>$124</td>
-                                <td>$5,828</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>Watermelon<br><span>Fruits</span></h4>
-                                </td>
-                                <td>$46</td>
-                                <td>$98</td>
-                                <td>$4,828</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>BornVita<br><span>Drinks</span></h4>
-                                </td>
-                                <td>$41</td>
-                                <td>$50</td>
-                                <td>$1252</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>Potato<br><span>Veggies</span></h4>
-                                </td>
-                                <td>$41</td>
-                                <td>$50</td>
-                                <td>$1252</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>Lays Tangy Tomato<br><span>Snacks</span></h4>
-                                </td>
-                                <td>$41</td>
-                                <td>$50</td>
-                                <td>$1252</td>
+                                <td>124</td>
+                                <td>Nestle</td>
                             </tr>
                         </tbody>
+
                     </table>
                 </div>
             </div>
@@ -328,6 +261,7 @@
                 </form>
             </div>
         </div>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js" integrity="sha512-EmNxF3E6bM0Xg1zvmkeYD3HDBeGxtsG92IxFt1myNZhXdCav9MzvuH/zNMBU1DmIPN6njrhX1VTbqdJxQ2wHDg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
